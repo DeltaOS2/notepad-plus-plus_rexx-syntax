@@ -1,0 +1,2456 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes" ?>
+<NotepadPlus>
+  <!--
+  The Rexx language API is mainly made for "Open Object Rexx" but also
+  includes "Classic Rexx" and "NetRexx" elements.
+  
+  When ever you extend yourself this file, make sure that you keep the
+  KeyWords in alphabetically order! And don't forget to update your
+  "userDefineLang.xml", to.
+  
+  @author: Gert Massheimer
+  @email: delta@deltaos.de
+  @version: OODialog 4.2.0 March 2011 (beta r6800)
+  @last update: 09.03.2011
+  -->
+  <AutoComplete language="rex">
+    <Environment ignoreCase="yes" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" />
+    <KeyWord name=".Context" />
+    <KeyWord name=".endOfLine" />
+    <KeyWord name=".Environment" />
+    <KeyWord name=".Error" />
+    <KeyWord name=".False" />
+    <KeyWord name=".Input" />
+    <KeyWord name=".Line" />
+    <KeyWord name=".Local" />
+    <KeyWord name=".Methods" />
+    <KeyWord name=".Nil" />
+    <KeyWord name=".Output" />
+    <KeyWord name=".RS" />
+    <KeyWord name=".True" />
+    <KeyWord name=".StdErr" />
+    <KeyWord name=".StdIn" />
+    <KeyWord name=".StdOut" />
+    <KeyWord name=".StdQue" />
+    <KeyWord name="::Class" />
+    <KeyWord name="::Method" />
+    <KeyWord name="::Requires" />
+    <KeyWord name="::Routine" />
+    <KeyWord name="Abbrev" func="yes" >
+      <Overload retVal="{string}" descr="Abbreviation" >
+        <Param name="information, info" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Abs" func="yes" >
+      <Overload retVal="{int}" descr="Absolute Value" >
+        <Param name="number" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Abstract" />
+    <KeyWord name="Add" />
+    <KeyWord name="AddAttribute" />
+    <KeyWord name="AddAutoStartMethod" />
+    <KeyWord name="AddComboEntry" />
+    <KeyWord name="AddDirectory" />
+    <KeyWord name="AddFullSeq" />
+    <KeyWord name="AddIconResource" func="yes" >
+      <Overload retVal="{int}" descr="The method adds an icon resource file name to the dialog" >
+        <Param name="id" />
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Additional" />
+    <KeyWord name="AddListEntry" />
+    <KeyWord name="Address" func="yes" >
+      <Overload retVal="{string}" descr="Returns on Windows -&gt; &quot;CMD&quot; and on Linux -&gt; &quot;bash&quot;" />
+    </KeyWord>
+    <KeyWord name="AddRow" />
+    <KeyWord name="AddSequence" />
+    <KeyWord name="AddStyle" />
+    <KeyWord name="addUserMsg" func="yes" >
+      <Overload retVal="{mixed}" descr="The method connects a Windows message with an Object Rexx method" >
+        <Param name="methodName" />
+        <Param name="winMsg" />
+        <Param name="[ f1 ]" />
+        <Param name="[ wParam ]" />
+        <Param name="[ f2 ]" />
+        <Param name="[ lParam ]" />
+        <Param name="[ f3 ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="AdjustToRectangle" func="yes" >
+      <Overload retVal="{string}" descr="The method calculates the window rectangle of a tab control that corresponds to the specified display rectangle" >
+        <Param name="left" />
+        <Param name="top" />
+        <Param name="right" />
+        <Param name="buttom" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="AlignLeft" />
+    <KeyWord name="AlignTop" />
+    <KeyWord name="All" />
+    <KeyWord name="Any" />
+    <KeyWord name="Append" />
+    <KeyWord name="Arg" func="yes" >
+      <Overload retVal="{mixed}" descr="Argument" >
+        <Param name="[ n ]" />
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Arrange" />
+    <KeyWord name="Array" />
+    <KeyWord name="AskDialog" func="yes" >
+      <Overload retVal="{int}" descr="Pops up a message box containing the specified text, a Yes button, and a No Button" >
+        <Param name="question" />
+        <Param name="[ defaultButton ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="AssignFocus" />
+    <KeyWord name="AsyncMessageHandling" />
+    <KeyWord name="AutoDetection" />
+    <KeyWord name="B2X" func="yes" >
+      <Overload retVal="{binary string}" descr="Binary to Hexadecimal" >
+        <Param name="binary_string" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="BackgroundBitmap" />
+    <KeyWord name="BackgroundColor" />
+    <KeyWord name="Beep" func="yes" >
+      <Overload retVal="{int}" descr="Sounds the speaker at frequency for duration" >
+        <Param name="frequency, duration" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Binary" />
+    <KeyWord name="bitAND" func="yes" >
+      <Overload retVal="{string}" descr="Bit by Bit AND" >
+        <Param name="string1" />
+        <Param name="[[ string2 ]" />
+        <Param name="[ pad ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bitOR" func="yes" >
+      <Overload retVal="{string}" descr="Bit by Bit OR" >
+        <Param name="string1" />
+        <Param name="[[ string2 ]" />
+        <Param name="[ pad ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bitXOR" func="yes" >
+      <Overload retVal="{string}" descr="Bit by Bit XOR" >
+        <Param name="string1" />
+        <Param name="[[ string2 ]" />
+        <Param name="[ pad ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="BkColor" />
+    <KeyWord name="Boolean" />
+    <KeyWord name="Both" />
+    <KeyWord name="By" />
+    <KeyWord name="Byte" />
+    <KeyWord name="C2D" func="yes" descr="Character to Decimal" >
+      <Overload retVal="{int_dez}" >
+        <Param name="string" />
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="C2X" func="yes" >
+      <Overload retVal="{int_hex}" descr="Character to Hexadecimal" >
+        <Param name="string" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Call" />
+    <KeyWord name="Cancel" />
+    <KeyWord name="CaptureMouse" />
+    <KeyWord name="CaseLess" />
+    <KeyWord name="Catch" />
+    <KeyWord name="Center" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string centered in length" >
+        <Param name="string, length" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Centre" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string centered in length" >
+        <Param name="string, length" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="ChangeBitmap" />
+    <KeyWord name="ChangeBitmapButton" />
+    <KeyWord name="ChangeComboEntry" />
+    <KeyWord name="ChangeListEntry" />
+    <KeyWord name="ChangePage" />
+    <KeyWord name="ChangeStr" func="yes" >
+      <Overload retVal="{string}" descr="Returns a copy of haystack in which newNeedle replaces occurrences of needle" >
+        <Param name="needle, haystack, newNeedle" />
+        <Param name="[ count ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Char" />
+    <KeyWord name="CharIn" func="yes" descr="Returns a string of up to length characters read from the character input stream name" >
+      <Overload retVal="{string}" >
+        <Param name="[ name ]" />
+        <Param name="[[ start ]" />
+        <Param name="[ length ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="CharOut" func="yes" descr="Returns the count of characters remaining after attempting to write string to the character output stream name" >
+      <Overload retVal="{int}" >
+        <Param name="[ name ]" />
+        <Param name="[[ string ]" />
+        <Param name="[ start ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Chars" func="yes" descr="Returns the total number of characters remaining in the character input stream name" >
+      <Overload retVal="{int}" >
+        <Param name="[ name ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Check" />
+    <KeyWord name="Checked" />
+    <KeyWord name="Child" />
+    <KeyWord name="Class" />
+    <KeyWord name="Clear" />
+    <KeyWord name="ClearButtonRect" />
+    <KeyWord name="ClearRect" />
+    <KeyWord name="ClearSelRange" />
+    <KeyWord name="ClearTicks" />
+    <KeyWord name="ClearWindowRect" />
+    <KeyWord name="ClientToScreen" />
+    <KeyWord name="Close" />
+    <KeyWord name="CloseDropDown" />
+    <KeyWord name="Collapse" />
+    <KeyWord name="CollapseAndReset" />
+    <KeyWord name="ColumnInfo" />
+    <KeyWord name="ColumnWidth" />
+    <KeyWord name="CombineELwithSB" />
+    <KeyWord name="ComboAddDirectory" />
+    <KeyWord name="ComboDrop" />
+    <KeyWord name="Compare" func="yes" descr="Compares string1 with string2" >
+      <Overload retVal="{int}" >
+        <Param name="string1, string2" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Condition" func="yes" descr="Returns the condition information associated with the current trapped condition" >
+      <Overload retVal="{string}" >
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectAllSBEvents" func="yes" descr="Connects all scroll bar events to one method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="methodName" />
+        <Param name="[ min ]" />
+        <Param name="[ max ]" />
+        <Param name="[ pos ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectButtonEvent" func="yes" descr="Connects a method in the Rexx dialog to the Windows event notification from a button control" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectCheckBox" func="yes" descr="The method connects a check box in the underlying dialog, through its resource ID, to a newly created data attribute" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectComboBoxEvent" func="yes" descr="Connects a particular WM_NOTIFY message for a combo box control with a method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectDateTimePickerEvent" func="yes" descr="Connects a method in the Rexx dialog to the Windows event notification from a DateTimePicker control" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectDraw" func="yes" descr="The method connects the draw control event notification with a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="[ id ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectEachSBEvent" func="yes" descr="The method initializes and connects a scroll bar to an Object Rexx object" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="mthWhenUp" />
+        <Param name="mthWhenDown" />
+        <Param name="[ mthWhenDrag ]" />
+        <Param name="[ min ]" />
+        <Param name="[ max ]" />
+        <Param name="[ pos ]" />
+        <Param name="[ mthPgUp ]" />
+        <Param name="[ mthPgDn ]" />
+        <Param name="[ mthTop ]" />
+        <Param name="[ progButtom ]" />
+        <Param name="[ progTrack ]" />
+        <Param name="[ progEndSc ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectEdit" func="yes" descr="The method creates a new data attribute in the Rexx dialog object" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectEditEvent" func="yes" descr="Connects a particular WM_NOTIFY message for an edit control with a method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectFKeyPress" func="yes" descr="Connects a function key press event notification with a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectHelp" func="yes" descr="The method connects the Windows Help event with a method in the dialog" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectKeyPress" func="yes" descr="Connects a key press event notification with a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+        <Param name="keys" />
+        <Param name="[ filter ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectListBox" func="yes" descr="The method uses the resource ID to connect a list box in the underlying dialog to a newly created data attribute" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectListBoxEvent" func="yes" descr="Connects a particular WM_NOTIFY message for a list box control with a method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectListView" func="yes" descr="The method creates a new attribute and connects it to the list-view id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectListViewEvent" func="yes" descr="The method connects a particular event notification from a list-view control with an event handling method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectMonthCalendarEvent" func="yes" descr="The method connects an event notification message from a month calendar control to a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+        <Param name="[ willReply ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectMouseCapture" func="yes" descr="An event notification is generated when a window loses the mouse capture" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectMove" func="yes" descr="The method connects a dialog move event notification with a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectPosChanged" func="yes" descr="The method connects the position changed event notification sent to a dialog to a method in the Rexx dialog object" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectRadioButton" func="yes" descr="The method uses the resource ID to connect a radio button in the underlying dialog to a newly created data attribute" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectResize" func="yes" descr="The method connects a size event notification to the underlying dialog with a method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectScrollBarEvent" func="yes" descr="Connects a particular WM_NOTIFY message for a scroll bar control with a method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectSizeMoveEnded" func="yes" descr="Connects the Windows exit size / move event with an event handling method in the Rexx dialog object" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+        <Param name="[ willReply ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTab" func="yes" descr="The method creates a new attribute and connects it to the tab control id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTabEvent" func="yes" descr="The method connects a specific event notification from a tab control with an event handling method in the Rexx dialog" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+        <Param name="[ willReply ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTrackBar" func="yes" descr="The method creates a new attribute and connects it to the track bar id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTrackBarEvent" func="yes" descr="The method connects a particular WM_NOTIFY message for a trackbar control" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTreeView" func="yes" descr="Creates a data attribute in the Rexx dialog object and connects it to a tree view control in the underlying dialog using its resource id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectTreeViewEvent" func="yes" descr="The method connects a method in a Rexx dialog to a particular tree view event" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="connectUpDownEvent" func="yes" descr="The method connects event notifications from an up-down object with an event handling method" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="event" />
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Constant" />
+    <KeyWord name="Copies" func="yes" descr="Returns n concatenated copies of string" >
+      <Overload retVal="{string}" >
+        <Param name="string, n" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="CountStr" func="yes" descr="Returns a count of the occurrences of needle in haystack that do not overlap" >
+      <Overload retVal="{int}" >
+        <Param name="needle, haystack" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="CountTicks" />
+    <KeyWord name="create" func="yes" >
+      <Overload retVal="{bool}" descr="The method begins the creation of the in-memory Windows dialog template by specifying the general details for the dialog itself" >
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ title ]" />
+        <Param name="[ style ]" />
+        <Param name="[ dlgClass ]" />
+        <Param name="[ fontName ]" />
+        <Param name="[ fontSize ]" />
+        <Param name="[ expected ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createBitmapButton" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a bitmap push button in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[[ cx ]" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+        <Param name="[ methName ]]" />
+        <Param name="normal" />
+        <Param name="[[ focused ]" />
+        <Param name="[ selected ]" />
+        <Param name="[ disabled ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createBlackFrame" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a black frame static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createBlackRect" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a black rectangle static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createBrush" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a logical brush that has the specified style, color, and pattern" >
+        <Param name="[ color ]" />
+        <Param name="[ brushSpecifier ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createCenter" func="yes" >
+      <Overload retVal="{bool}" descr="The method begins the creation of an in-memory dialog template for a dialog that will be centered in the user’s screen" >
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ title ]" />
+        <Param name="[ style ]" />
+        <Param name="[ dlgClass ]" />
+        <Param name="[ fontName ]" />
+        <Param name="[ fontSize ]" />
+        <Param name="[ expected ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createCheckBox" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a check box in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ label ]" />
+        <Param name="[ attrName ]" />
+        <Param name="[ connectOpt ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createCheckBoxGroup" func="yes" >
+      <Overload retVal="{int}" descr="The method  method creates a group of check box controls in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="{ text }" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createCheckBoxStem" func="yes" >
+      <Overload retVal="{int}" descr="The method  method creates a group of check box controls" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="text." />
+        <Param name="[ max ]" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createComboBox" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a combo box in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createComboBoxInput" func="yes" >
+      <Overload retVal="{int}" descr="The method is used to create a combo box and a static text control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx1 ]" />
+        <Param name="cx2" />
+        <Param name="[ count ]" />
+        <Param name="text" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEdit" func="yes" >
+      <Overload retVal="{int}" descr="Creates an edit control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEditInput" func="yes" >
+      <Overload retVal="{int}" descr="Creates an edit control and a static text control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx1 ]" />
+        <Param name="cx2" />
+        <Param name="[ cy ]" />
+        <Param name="text" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEditInputGroup" func="yes" >
+      <Overload retVal="{int}" descr="Creates a group of one or more edit controls and their static text labels in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx1 ]" />
+        <Param name="cx2" />
+        <Param name="{ text }" />
+        <Param name="[ style ]" />
+        <Param name="[ id2 ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEditInputGroupStem" func="yes" >
+      <Overload retVal="{int}" descr="Creates a group of one or more edit controls and their static text labels in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx1 ]" />
+        <Param name="cx2" />
+        <Param name="text." />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEtchedFrame" func="yes" >
+      <Overload retVal="{int}" descr="The method adds an etched frame static control to the dialog" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEtchedHorizontal" func="yes" >
+      <Overload retVal="{int}" descr="The method adds an etched horizontal line static control to the dialog" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createEtchedFrameVertical" func="yes" >
+      <Overload retVal="{int}" descr="The method creates an etched vertical line static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createFont" func="yes" >
+      <Overload retVal="{int}" descr="It's not correct! Don't use it! Use createFontEx instead! Creates a logical font with the characteristics requested" >
+        <Param name="[ fontName ]" />
+        <Param name="[ fontSize ]" />
+        <Param name="[ style ]" />
+        <Param name="[ fontWidth ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createFontEx" func="yes" >
+      <Overload retVal="{int}" descr="Creates a logical font with the characteristics requested" >
+        <Param name="fontName" />
+        <Param name="[ pointSize ]" />
+        <Param name="[ additional ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createGrayFrame" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a gray frame static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createGrayRect" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a gray rectangle static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createGroupBox" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a group box the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createListBox" func="yes" >
+      <Overload retVal="{int}" descr="Adds a list box to the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createListView" func="yes" >
+      <Overload retVal="{int}" descr="Creates a list-view control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createOkCancelLeftBottom" func="no" >
+      <Overload retVal="{int}" descr="The method adds an OK and a Cancel push button group to the dialog template" >
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createOkCancelLeftTop" func="no" >
+      <Overload retVal="{int}" descr="The method adds an OK and a Cancel push button group to the dialog template" >
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createOkCancelRightBottom" func="no" >
+      <Overload retVal="{int}" descr="The method adds an OK and a Cancel push button group to the dialog template" >
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createOkCancelRightTop" func="no" >
+      <Overload retVal="{int}" descr="The method adds an OK and a Cancel push button group to the dialog template" >
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createPasswordEdit" func="yes" >
+      <Overload retVal="{int}" descr="Creates an edit control in the dialog template with the PASSWORD sytle" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createPen" func="yes" >
+      <Overload retVal="{int}" descr="Creates a logical pen that has the specified style, width, and color" >
+        <Param name="[ width ]" />
+        <Param name="[ style ]" />
+        <Param name="[ color ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createProgressBar" func="yes" >
+      <Overload retVal="{int}" descr="Creates a progress bar in the dialog template and connects it with a data attribute" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createPushButton" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a push button in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+        <Param name="[ method ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createPushButtonGroup" func="yes" >
+      <Overload retVal="{int}" descr="Use the method to create more than one push button in the dialog template at one time" >
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="[ cy ]" />
+        <Param name="{ text" />
+        <Param name="id" />
+        <Param name="method }" />
+        <Param name="[ r ]" />
+        <Param name="[ o ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createRadioButton" func="yes" >
+      <Overload retVal="{int}" descr="The method adds a radio button to the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createRadioButtonGroup" func="yes" >
+      <Overload retVal="{int}" descr="Creates a complete group of auto radio buttons" >
+        <Param name="id1" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="{ text }" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createRadioButtonStem" func="yes" >
+      <Overload retVal="{int}" descr="The method adds a group of radio button controls to the dialog" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="text." />
+        <Param name="[ max ]" />
+        <Param name="[ style ]" />
+        <Param name="[ idStat ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createScrollBar" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a scroll bar in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createStatic" func="yes" >
+      <Overload retVal="{int}" descr="The method is used to create a static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createStaticImage" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a static control that displays images in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createStaticText" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a static text control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="[ cx ]" />
+        <Param name="[ cy ]" />
+        <Param name="[ style ]" />
+        <Param name="[ text ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createTab" func="yes" >
+      <Overload retVal="{int}" descr="Creates a tab control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createTrackBar" func="yes" >
+      <Overload retVal="{int}" descr="Creates a trackbar control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createTreeView" func="yes" >
+      <Overload retVal="{int}" descr="Creates a tree view control in the dialog template" >
+        <Param name="id" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+        <Param name="[ attrName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createWhiteFrame" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a white frame static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="createWhiteRect" func="yes" >
+      <Overload retVal="{int}" descr="The method creates a white rectangle static control in the dialog template" >
+        <Param name="[ id ]" />
+        <Param name="x" />
+        <Param name="y" />
+        <Param name="cx" />
+        <Param name="cy" />
+        <Param name="[ style ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="CrossRef" />
+    <KeyWord name="CursorPos" />
+    <KeyWord name="Cursor_AppStarting" />
+    <KeyWord name="Cursor_Arrow" />
+    <KeyWord name="Cursor_Cross" />
+    <KeyWord name="Cursor_No" />
+    <KeyWord name="Cursor_Wait" />
+    <KeyWord name="D2C" func="yes" descr="Decimal to Character" >
+      <Overload retVal="{string}" >
+        <Param name="wholeNumber" />
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="D2X" func="yes" descr="Decimal to Hexadecimal" >
+      <Overload retVal="{int_hex}" >
+        <Param name="wholeNumber" />
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DataType" func="yes" descr="Returns the DataType of string" >
+      <Overload retVal="{mixed}" >
+        <Param name="string" />
+        <Param name="[ type ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Date" func="yes" descr="Returns, by default, the local date in the format: dd mon yyyy" >
+      <Overload retVal="{mixed}" >
+        <Param name="[ option ]" />
+        <Param name="[ string ]" />
+        <Param name="[ option2 ]" />
+        <Param name="[ out-sep ]" />
+        <Param name="[[ string ]" />
+        <Param name="[ option2 ]" />
+        <Param name="[ out-sep ]" />
+        <Param name="[ in-sep ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DateTime" />
+    <KeyWord name="DefineDialog" />
+    <KeyWord name="DefListDragHandler" func="yes" descr="This method implementation allows the user to drag an item from one location to another" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="item" />
+        <Param name="point" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DefTreeDragHandler" func="yes" descr="This method allows the user to move an item, or a node with all its subitems, from one parent node to another within the tree view" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+        <Param name="item" />
+        <Param name="point" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Delete" />
+    <KeyWord name="DeleteAll" />
+    <KeyWord name="DeleteColumn" />
+    <KeyWord name="DeleteComboEntry" />
+    <KeyWord name="DeleteFont" />
+    <KeyWord name="DeleteListEntry" />
+    <KeyWord name="DeleteObject" />
+    <KeyWord name="DelStr" func="yes" >
+      <Overload retVal="{string}" descr="Returns string after deleting the substring that begins at the nth character and is of length characters" >
+        <Param name="string, n" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DelWord" func="yes" >
+      <Overload retVal="{string}" descr="Returns string after deleting the substring that starts at the nth word and is of length whitespace-delimited words" >
+        <Param name="string, n" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DeSelect" />
+    <KeyWord name="DeSelectIndex" />
+    <KeyWord name="DeselectRange" />
+    <KeyWord name="DeterminePosition" />
+    <KeyWord name="DetermineSBPosition" />
+    <KeyWord name="Diag" />
+    <KeyWord name="Digits" func="yes" >
+      <Overload retVal="{int}" descr="Returns the current setting of NUMERIC DIGITS" />
+    </KeyWord>
+    <KeyWord name="DimBitmap" />
+    <KeyWord name="Directory" func="yes" descr="Returns the current directory, changing it to newdirectory if an argument is supplied and the named directory exists" >
+      <Overload retVal="{string}" >
+        <Param name="[ newDirectory ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Disable" />
+    <KeyWord name="disableControl" func="yes" descr="Disables the control with the specified resource id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="disconnectKeyPress" func="yes" descr="Disconnects a key press event from a method that was previously connected using connectKeyPress, or connectFKeyPress" >
+      <Overload retVal="{int}" >
+        <Param name="methodName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="DisplaceBitmap" />
+    <KeyWord name="Display" />
+    <KeyWord name="Do" />
+    <KeyWord name="Double" />
+    <KeyWord name="Draw" />
+    <KeyWord name="DrawAngleArc" />
+    <KeyWord name="DrawArc" />
+    <KeyWord name="DrawBitmap" />
+    <KeyWord name="DrawButton" />
+    <KeyWord name="DrawLine" />
+    <KeyWord name="DrawPie" />
+    <KeyWord name="DrawPixel" />
+    <KeyWord name="Drop" />
+    <KeyWord name="DropHighlight" />
+    <KeyWord name="DropHighlighted" />
+    <KeyWord name="Edit" />
+    <KeyWord name="Else" />
+    <KeyWord name="Enable" />
+    <KeyWord name="enableControl" func="yes" descr="Enables the control with the specified resource id" >
+      <Overload retVal="{int}" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="End" />
+    <KeyWord name="EndAsyncExecution" />
+    <KeyWord name="EndEdit" />
+    <KeyWord name="EndLocal" func="yes" >
+      <Overload retVal="{mixed}" descr="Linux only!" />
+    </KeyWord>
+    <KeyWord name="Engineering" />
+    <KeyWord name="EnsureCaretVisibility" />
+    <KeyWord name="EnsureVisible" />
+    <KeyWord name="Error" />
+    <KeyWord name="ErrorDialog" func="yes" >
+      <Overload retVal="{string}" descr="Pops up a message box containing the specified text, an OK button, and an error symbol" >
+        <Param name="errorText" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="ErrorText" func="yes" >
+      <Overload retVal="{string}" descr="Returns the Rexx error message associated with error number n" >
+        <Param name="n" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Execute" />
+    <KeyWord name="ExecuteAsync" />
+    <KeyWord name="Exits" />
+    <KeyWord name="Exit" />
+    <KeyWord name="Expand" />
+    <KeyWord name="Expose" />
+    <KeyWord name="Extends" />
+    <KeyWord name="Failure" />
+    <KeyWord name="FileNameDialog" func="yes" >
+      <Overload retVal="{string}" descr="Causes a file selection dialog box to appear" >
+        <Param name="[ selFile ]" />
+        <Param name="[ parent ]" />
+        <Param name="[ fileMask ]" />
+        <Param name="[ loadOrSave ]" />
+        <Param name="[ title ]" />
+        <Param name="[ defExtension ]" />
+        <Param name="[ multiSelect ]" />
+        <Param name="[ sepChar ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="FileSpec" func="yes" >
+      <Overload retVal="{string}" descr="Returns a selected element of filespec, given file specification" >
+        <Param name="option, fileSpec" />
+        <Param name="[ location ]" />
+        <Param name="[ extension ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="FillDrawing" />
+    <KeyWord name="Final" />
+    <KeyWord name="Finally" />
+    <KeyWord name="Find" />
+    <KeyWord name="FindComboEntry" />
+    <KeyWord name="FindListEntry" />
+    <KeyWord name="FindNearestXY" />
+    <KeyWord name="FindPartial" />
+    <KeyWord name="FirstVisible" />
+    <KeyWord name="FirstVisibleLine" />
+    <KeyWord name="Float" />
+    <KeyWord name="Flush" />
+    <KeyWord name="Focus" />
+    <KeyWord name="Focused" />
+    <KeyWord name="FocusItem" />
+    <KeyWord name="FontColor" />
+    <KeyWord name="FontToDC" />
+    <KeyWord name="For" />
+    <KeyWord name="ForegroundWindow" />
+    <KeyWord name="Forever" />
+    <KeyWord name="Form" func="yes" >
+      <Overload retVal="{string}" descr="Returns the current setting of NUMERIC FORM" />
+    </KeyWord>
+    <KeyWord name="Format" func="yes" >
+      <Overload retVal="{int}" descr="Returns number, rounded and formatted" >
+        <Param name="number" />
+        <Param name="[ before ]" />
+        <Param name="[ after ]" />
+        <Param name="[[ expp ]" />
+        <Param name="[ expt ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Forward" />
+    <KeyWord name="FreeButtonDC" />
+    <KeyWord name="FreeDC" />
+    <KeyWord name="FreeWindowDC" />
+    <KeyWord name="Fuzz" func="yes" >
+      <Overload retVal="{int}" descr="Returns the current setting of NUMERIC FUZZ" />
+    </KeyWord>
+    <KeyWord name="Get" />
+    <KeyWord name="GetArcDirection" />
+    <KeyWord name="GetAttrib" />
+    <KeyWord name="GetBitmapSizeX" />
+    <KeyWord name="GetBitmapSizeY" />
+    <KeyWord name="GetBmpDisplacement" />
+    <KeyWord name="GetButtonDC" />
+    <KeyWord name="GetButtonRect" />
+    <KeyWord name="getCheckBoxData" func="yes" >
+      <Overload retVal="{string}" descr="The method gets the data of a check box" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetClientRect" />
+    <KeyWord name="getComboBoxData" func="yes" >
+      <Overload retVal="{string}" descr="The method gets the data of a combo box" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetComboEntry" />
+    <KeyWord name="GetComboItems" />
+    <KeyWord name="getControlData" func="yes" >
+      <Overload retVal="{string}" descr="The method gets the data of a dialog control, regardless of the type of the control" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetCurrentComboIndex" />
+    <KeyWord name="GetCurrentListIndex" />
+    <KeyWord name="getData" func="yes" >
+      <Overload retVal="{int}" descr="The method receives data from the underlying Windows dialog and copies it to the associated Rexx dialog data attributes" >
+      </Overload>
+    </KeyWord>
+    <KeyWord name="getDataAttribute" func="yes" >
+      <Overload retVal="{int}" descr="The method transfers the data of a dialog control to the connected data attribute of the Rexx dialog object" >
+        <Param name="attrName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="getDataStem" func="yes" >
+      <Overload retVal="{int}" descr="The method is the reverse of the setDataStem() method" >
+        <Param name="dataStem." />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="getEditData" func="yes" >
+      <Overload retVal="{string}" descr="The method gets the data of an edit control" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetDC" />
+    <KeyWord name="GetEditControl" />
+    <KeyWord name="GetFirstVisible" />
+    <KeyWord name="GetFocus" />
+    <KeyWord name="GetID" />
+    <KeyWord name="GetItem" />
+    <KeyWord name="GetLine" />
+    <KeyWord name="GetLineStep" />
+    <KeyWord name="getListBoxData" func="yes" >
+      <Overload retVal="{string}" descr="The method gets the data of a list box" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetListEntry" />
+    <KeyWord name="GetListItemHeight" />
+    <KeyWord name="GetListItems" />
+    <KeyWord name="GetListWidth" />
+    <KeyWord name="GetMouseCapture" />
+    <KeyWord name="GetPageStep" />
+    <KeyWord name="GetPixel" />
+    <KeyWord name="GetPos" />
+    <KeyWord name="getRadioButtonData" func="yes" >
+      <Overload retVal="{int}" descr="The method gets the data of a radio button" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetRect" />
+    <KeyWord name="GetSBPos" />
+    <KeyWord name="GetSBRange" />
+    <KeyWord name="GetScrollBar" />
+    <KeyWord name="GetSelectedPage" />
+    <KeyWord name="GetSize" />
+    <KeyWord name="getSystemMetrics" func="yes" >
+      <Overload retVal="{int}" descr="Obtains the system metric value for the given index" >
+        <Param name="index" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="GetText" />
+    <KeyWord name="GetTick" />
+    <KeyWord name="GetWindowDC" />
+    <KeyWord name="GetWindowRect" />
+    <KeyWord name="Guard" />
+    <KeyWord name="Halt" />
+    <KeyWord name="Handle" />
+    <KeyWord name="HasCode" />
+    <KeyWord name="HasIndex" />
+    <KeyWord name="hasKeyPressConnection" func="yes" descr="This method is used to query if a connection to a key press event already exists" >
+      <Overload retVal="{int}" >
+        <Param name="[ methodName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="HasMethod" />
+    <KeyWord name="Help" />
+    <KeyWord name="Hide" />
+    <KeyWord name="HideFast" />
+    <KeyWord name="HideItem" />
+    <KeyWord name="HideItemFast" />
+    <KeyWord name="HideWindow" />
+    <KeyWord name="HideWindowFast" />
+    <KeyWord name="HitTest" />
+    <KeyWord name="HScrollPos" />
+    <KeyWord name="If" />
+    <KeyWord name="Implements" />
+    <KeyWord name="Import" />
+    <KeyWord name="Indent" />
+    <KeyWord name="Indeterminate" />
+    <KeyWord name="InfoDialog" func="yes" >
+      <Overload retVal="{string}" descr="Pops up a message box containing the specified text and an OK button" >
+        <Param name="infoText" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Inherit" />
+    <KeyWord name="InheritTable" />
+    <KeyWord name="Init" />
+    <KeyWord name="InitAutoDetection" />
+    <KeyWord name="InitCategories" />
+    <KeyWord name="InitDialog" />
+    <KeyWord name="InitRange" />
+    <KeyWord name="InitSelRange" />
+    <KeyWord name="Insert" func="yes" >
+      <Overload retVal="{string}" descr="Inserts the string new, padded or truncated to length length, into the string target after the nth character" >
+        <Param name="new, target" />
+        <Param name="[ n ]" />
+        <Param name="[[ length ]" />
+        <Param name="[ pad ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="InsertColumn" />
+    <KeyWord name="InsertComboEntry" />
+    <KeyWord name="InsertListEntry" />
+    <KeyWord name="installAnimatedButton" func="yes" >
+      <Overload retVal="{string}" descr="The method installs an animated button and runs it concurrently with the main activity" >
+        <Param name="id" />
+        <Param name="[ msgToRaise ]" />
+        <Param name="[ AutoClass ]" />
+        <Param name="bmpFrom" />
+        <Param name="[ bmpTo ]" />
+        <Param name="moveX" />
+        <Param name="moveY" />
+        <Param name="[ sizeX ]" />
+        <Param name="[ sizeY ]" />
+        <Param name="delay" />
+        <Param name="[ xNow ]" />
+        <Param name="[ yNow ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="installBitmapButton" func="yes" >
+      <Overload retVal="{string}" descr="The method connects a bitmap and a method with a push button" >
+        <Param name="id" />
+        <Param name="[ msgToRaise ]" />
+        <Param name="bmpNormal" />
+        <Param name="[[ bmpFocused ]" />
+        <Param name="[ bmpSelected ]" />
+        <Param name="[ bmpDisabled ]" />
+        <Param name="[ style ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Int" />
+    <KeyWord name="Interface" />
+    <KeyWord name="Interpret" />
+    <KeyWord name="IsAncestor" />
+    <KeyWord name="IsChecked" />
+    <KeyWord name="IsDialogActive" />
+    <KeyWord name="IsDropDownOpen" />
+    <KeyWord name="IsModified" />
+    <KeyWord name="IsMouseButtonDown" />
+    <KeyWord name="ItemHeight" />
+    <KeyWord name="ItemInfo" />
+    <KeyWord name="ItemPos" />
+    <KeyWord name="Items" />
+    <KeyWord name="ItemsPerPage" />
+    <KeyWord name="ItemState" />
+    <KeyWord name="ItemTitle" />
+    <KeyWord name="Iterate" />
+    <KeyWord name="Label" />
+    <KeyWord name="Last" />
+    <KeyWord name="LastPos" func="yes" >
+      <Overload retVal="{int}" descr="Returns the position of the last occurrence of one string, needle, in another, haystack" >
+        <Param name="needle, haystack" />
+        <Param name="[[ start ]" />
+        <Param name="[ length ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="LastSelected" />
+    <KeyWord name="Leave" />
+    <KeyWord name="Leaving" />
+    <KeyWord name="Left" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string of length length, containing the leftmost length characters of string" >
+        <Param name="string, length" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Length" func="yes" >
+      <Overload retVal="{int}" descr="Returns the length of string" >
+        <Param name="string" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Line" />
+    <KeyWord name="LineFromIndex" />
+    <KeyWord name="LineIn" func="yes" >
+      <Overload retVal="{string}" descr="Returns count lines read from the character input stream name" >
+        <Param name="[ name ]" />
+        <Param name="[[ line ]" />
+        <Param name="[ count ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="LineIndex" />
+    <KeyWord name="LineLength" />
+    <KeyWord name="LineOut" func="yes" >
+      <Overload retVal="{int}" descr="Returns 0 if successful in writing string to the character output stream name, or 1 if an error occurs while writing the line" >
+        <Param name="[ name ]" />
+        <Param name="[[ string ]" />
+        <Param name="[ line ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Lines" func="yes" >
+      <Overload retVal="{int}" descr="Returns 1 if any data remains between the current read position and the end of the character input stream name" >
+        <Param name="[ name ]" />
+        <Param name="[ normal | count ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="LineScroll" />
+    <KeyWord name="ListAddDirectory" />
+    <KeyWord name="ListDrop" />
+    <KeyWord name="Load" />
+    <KeyWord name="LoadBitmap" />
+    <KeyWord name="LoadFrame" />
+    <KeyWord name="LoadItems" />
+    <KeyWord name="Long" />
+    <KeyWord name="LostDigits" />
+    <KeyWord name="Lower" func="yes" >
+      <Overload retVal="{string}" descr="Returns a new string with the characters of string beginning with character n for length characters converted to lowercase" >
+        <Param name="string" />
+        <Param name="[ n ]" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="MakeFirstVisible" />
+    <KeyWord name="Margins" />
+    <KeyWord name="Max" func="yes" >
+      <Overload retVal="{int}" descr="Returns the largest number of the list specified, formatted according to the current NUMERIC settings" >
+        <Param name="number1" />
+        <Param name="[[ number2 ]" />
+        <Param name="[ ... ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Maximize" />
+    <KeyWord name="Method" />
+    <KeyWord name="Methods" />
+    <KeyWord name="Min" func="yes" >
+      <Overload retVal="{int}" descr="Returns the smallest number of the list specified, formatted according to the current NUMERIC settings" >
+        <Param name="number1" />
+        <Param name="[[ number2 ]" />
+        <Param name="[ ... ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Minimize" />
+    <KeyWord name="Modify" />
+    <KeyWord name="ModifyColumn" />
+    <KeyWord name="Move" />
+    <KeyWord name="MoveItem" />
+    <KeyWord name="MSSleep" func="yes" >
+      <Overload retVal="{int}" descr="Sleeps for the specified number of milliseconds" >
+        <Param name="duration" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Name" />
+    <KeyWord name="Native" />
+    <KeyWord name="New" />
+    <KeyWord name="newCheckBox" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the CheckBox control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newComboBox" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the ComboBox control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newDateTimePicker" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns a date and time picker object" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newGroupBox" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the GroupBox control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newListBox" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the ListBox control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newListView" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the ListView control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newMonthCalendar" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the MonthCalendar control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newProgressBar" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the ProgressBar control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newPushButtom" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the Button control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newRadioButtom" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the RadioButton control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newScrollBar" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the ScrollBar control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newStatic" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the Static control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newTab" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the Tab control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newTrackBar" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the TrackBar control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newTreeView" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the TreeView control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="newUpDown" func="yes" >
+      <Overload retVal="{bool}" descr="The method returns an object of the UpDown control class" >
+        <Param name="id" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Next" />
+    <KeyWord name="NextLeft" />
+    <KeyWord name="NextPage" />
+    <KeyWord name="NextRight" />
+    <KeyWord name="NextSelected" />
+    <KeyWord name="NextVisible" />
+    <KeyWord name="NoAutoDetection" />
+    <KeyWord name="NoBuffer" />
+    <KeyWord name="NoCrossRef" />
+    <KeyWord name="NoDiag" />
+    <KeyWord name="NoFormat" />
+    <KeyWord name="NoMethod" />
+    <KeyWord name="NOP" />
+    <KeyWord name="NoReplace" />
+    <KeyWord name="Normal" />
+    <KeyWord name="NoStrictArgs" />
+    <KeyWord name="NoStrictAssign" />
+    <KeyWord name="NoStrictCase" />
+    <KeyWord name="NoStrictSignal" />
+    <KeyWord name="NoString" />
+    <KeyWord name="NoTrace" />
+    <KeyWord name="NotReady" />
+    <KeyWord name="NoUTF9" />
+    <KeyWord name="NoValue" />
+    <KeyWord name="NoVerbose" />
+    <KeyWord name="NoVerboseX" />
+    <KeyWord name="Null" />
+    <KeyWord name="Numeric" />
+    <KeyWord name="Object" />
+    <KeyWord name="ObjectToDC" />
+    <KeyWord name="of" />
+    <KeyWord name="Off" />
+    <KeyWord name="OK" />
+    <KeyWord name="On" />
+    <KeyWord name="OnBeginDrag" />
+    <KeyWord name="OnBeginRightDrag" />
+    <KeyWord name="OnColumnClick" />
+    <KeyWord name="OnEndEdit" />
+    <KeyWord name="OnFocusChanged" />
+    <KeyWord name="OnGetDayState" />
+    <KeyWord name="OnKeyDown" />
+    <KeyWord name="OnRelease" />
+    <KeyWord name="OnSelChanged" />
+    <KeyWord name="OnSelect" />
+    <KeyWord name="OnSelectChanged" />
+    <KeyWord name="OnSelectFocusChanged" />
+    <KeyWord name="OnViewChange" />
+    <KeyWord name="OpaqueText" />
+    <KeyWord name="Open" />
+    <KeyWord name="OpenDropDown" />
+    <KeyWord name="Options" />
+    <KeyWord name="Otherwise" />
+    <KeyWord name="Over" />
+    <KeyWord name="Overlay" func="yes" >
+      <Overload retVal="{string}" descr="Returns the string target, which, starting at the nth character, is overlaid with the string new, padded or truncated to length length" >
+        <Param name="new, target" />
+        <Param name="[ n ]" />
+        <Param name="[ length ]" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Package" />
+    <KeyWord name="PageHasChanged" />
+    <KeyWord name="Parent" />
+    <KeyWord name="Parse" />
+    <KeyWord name="PasswordChar" />
+    <KeyWord name="pixel2dlgUnit" func="yes" >
+      <Overload retVal="{int}" descr="Takes a dimension expressed in pixels and tranforms it to a dimension expressed in dialog units of this dialog" >
+        <Param name="pixels" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Play" func="yes" >
+      <Overload retVal="{sound}" descr="This routine is used to play audio sounds" >
+        <Param name="needle, haystack" />
+        <Param name="[ fileName, YES ]" />
+        <Param name="[ fileName, LOOP ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Popup" />
+    <KeyWord name="PopupAsChild" />
+    <KeyWord name="Pos" func="yes" >
+      <Overload retVal="{int}" descr="Returns the position of one string, needle, in another, haystack" >
+        <Param name="needle, haystack" />
+        <Param name="[ start ]" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Positon" />
+    <KeyWord name="PosRectangle" />
+    <KeyWord name="Prepare4nItems" />
+    <KeyWord name="Previous" />
+    <KeyWord name="PreviousPage" />
+    <KeyWord name="PreviousSelected" />
+    <KeyWord name="PreviousVisible" />
+    <KeyWord name="Private" />
+    <KeyWord name="Procedure" />
+    <KeyWord name="ProcessMessage" />
+    <KeyWord name="Properties" />
+    <KeyWord name="Protect" />
+    <KeyWord name="Public" />
+    <KeyWord name="Pull" />
+    <KeyWord name="Push" />
+    <KeyWord name="Qualify" func="yes">
+      <Overload retVal="{string}" descr="Returns the a fully qualified file name for name" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Query" />
+    <KeyWord name="Queue" />
+    <KeyWord name="Queued" func="yes">
+      <Overload retVal="{int}" descr="Returns the number of lines remaining in the external data queue when the function is called" />
+    </KeyWord>
+    <KeyWord name="Raise" />
+    <KeyWord name="Random" func="yes">
+      <Overload retVal="{int}" descr="Returns a quasi-random whole number in the range min to max inclusive" >
+        <Param name="[ max ]" />
+        <Param name="[[ min ]" />
+        <Param name="[ max ]" />
+        <Param name="[ seed ]]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Range" />
+    <KeyWord name="Read" />
+    <KeyWord name="RecLength" />
+    <KeyWord name="Rectangle" />
+    <KeyWord name="Redraw" />
+    <KeyWord name="RedrawButton" />
+    <KeyWord name="RedrawClient" />
+    <KeyWord name="RedrawItems" />
+    <KeyWord name="RedrawRect" />
+    <KeyWord name="RedrawWindow" />
+    <KeyWord name="RedrawWindowRect" />
+    <KeyWord name="ReleaseMouseCapture" />
+    <KeyWord name="RemoveBitmap" />
+    <KeyWord name="RemoveStyle" />
+    <KeyWord name="Replace" />
+    <KeyWord name="ReplaceSelText" />
+    <KeyWord name="ReplaceStyle" />
+    <KeyWord name="Reply" />
+    <KeyWord name="RequiredWindowSize" />
+    <KeyWord name="Requires" />
+    <KeyWord name="Resize" />
+    <KeyWord name="ResizeItem" />
+    <KeyWord name="RestoreCursorShape" />
+    <KeyWord name="RestoreEditClass" />
+    <KeyWord name="Results" />
+    <KeyWord name="Return" />
+    <KeyWord name="Returns" />
+    <KeyWord name="Reverse" func="yes">
+      <Overload retVal="{string}" descr="Returns string reversed" >
+        <Param name="string" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Rexx" />
+    <KeyWord name="Right" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string of length length, containing the rightmost length characters of string" >
+        <Param name="string, length" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Root" />
+    <KeyWord name="Rows" />
+    <KeyWord name="RS" />
+    <KeyWord name="RxFuncAdd" func="yes" >
+      <Overload retVal="{int}" descr="Registers the function , making it available to Rexx procedures" >
+        <Param name="name, module" />
+        <Param name="[ procedure ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="RxFuncDrop" func="yes" >
+      <Overload retVal="{int}" descr="Removes (deregisters) the function name from the list of available functions" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="RxFuncQuery" func="yes" >
+      <Overload retVal="{int}" descr="Queries the list of available functions for the function name" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="RxMessageBox" func="yes" >
+      <Overload retVal="{int}" descr="Displays a Windows message box" >
+        <Param name="text" />
+        <Param name="[ title ]" />
+        <Param name="[ button ]" />
+        <Param name="[ icon ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="RxQueue" func="yes" >
+      <Overload retVal="{mixed}" descr="Creates and deletes external data queues" >
+        <Param name="&quot;Create&quot;" />
+        <Param name="[ QueueName ]" />
+        <Param name="[ &quot;Delete&quot;, QueueName ]" />
+        <Param name="[ &quot;Get&quot; ]" />
+        <Param name="[ &quot;Set&quot;, newQueueName ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="RxWinExec" func="yes" >
+      <Overload retVal="{int}" descr="Starts (executes) the application as specified in cmdline" >
+        <Param name="cmdLine" />
+        <Param name="[ cmdShow ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Say" />
+    <KeyWord name="Scientific" />
+    <KeyWord name="ScreenSize" func="yes" >
+      <Overload retVal="{int}" descr="Obtains the screen size in dialog units and in pixels" />
+    </KeyWord>
+    <KeyWord name="ScreenToClient" />
+    <KeyWord name="Scroll" />
+    <KeyWord name="ScrollBitmapFromTo" />
+    <KeyWord name="ScrollButton" />
+    <KeyWord name="ScrollCommand" />
+    <KeyWord name="ScrollInButton" />
+    <KeyWord name="ScrollText" />
+    <KeyWord name="Seek" />
+    <KeyWord name="Select" />
+    <KeyWord name="Selected" />
+    <KeyWord name="SelectedIndex" />
+    <KeyWord name="SelectedIndexes" />
+    <KeyWord name="SelectedItems" />
+    <KeyWord name="SelectIndex" />
+    <KeyWord name="SelectRange" />
+    <KeyWord name="Self" />
+    <KeyWord name="SelRange" />
+    <KeyWord name="SendMessageToItem" />
+    <KeyWord name="SetArcDirection" />
+    <KeyWord name="SetAttrib" />
+    <KeyWord name="SetCheckBox" />
+    <KeyWord name="SetColor" />
+    <KeyWord name="SetColumnWidth" />
+    <KeyWord name="SetComboLine" />
+    <KeyWord name="setControlText" func="yes" >
+      <Overload retVal="{int}" descr="The method sets the text of the specified dialog control to that specified id" >
+        <Param name="id" />
+        <Param name="text" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SetCurrentComboIndex" />
+    <KeyWord name="SetCurrentListIndex" />
+    <KeyWord name="SetCursorPos" />
+    <KeyWord name="setData" func="yes" >
+      <Overload retVal="{int}" descr="The method transfers the values of the dialog object data attributes to the underlying dialog controls" />
+    </KeyWord>
+    <KeyWord name="setDataStem" func="yes" >
+      <Overload retVal="{int}" descr="Sets the data, (the state,) of a number of Windows dialog controls to the values specified by the stem" >
+        <Param name="dataStem." />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SetEntryLine" />
+    <KeyWord name="SetFocus" />
+    <KeyWord name="SetFont" />
+    <KeyWord name="SetHScrollPos" />
+    <KeyWord name="SetItemFont" />
+    <KeyWord name="SetItemPos" />
+    <KeyWord name="SetItemState" />
+    <KeyWord name="SetItemText" />
+    <KeyWord name="SetLimit" />
+    <KeyWord name="SetLineStep" />
+    <KeyWord name="SetListColumnWidth" />
+    <KeyWord name="SetListItemHeight" />
+    <KeyWord name="SetListLine" />
+    <KeyWord name="SetListTabulators" />
+    <KeyWord name="SetListWidth" />
+    <KeyWord name="SetLocal" func="yes" >
+      <Overload retVal="{mixed}" descr="Linux only!" />
+    </KeyWord>
+    <KeyWord name="SetMargins" />
+    <KeyWord name="SetMax" />
+    <KeyWord name="SetMin" />
+    <KeyWord name="SetModified" />
+    <KeyWord name="SetMultiList" />
+    <KeyWord name="SetPadding" />
+    <KeyWord name="SetPageStep" />
+    <KeyWord name="SetPos" />
+    <KeyWord name="SetRadioButton" />
+    <KeyWord name="SetRange" />
+    <KeyWord name="SetReadOnly" />
+    <KeyWord name="SetRect" />
+    <KeyWord name="SetSBPos" />
+    <KeyWord name="SetSBRange" />
+    <KeyWord name="SetSelEnd" />
+    <KeyWord name="SetSelStart" />
+    <KeyWord name="SetSize" />
+    <KeyWord name="SetStep" />
+    <KeyWord name="SetTabulators" />
+    <KeyWord name="SetTickAt" />
+    <KeyWord name="SetTickFrequency" />
+    <KeyWord name="SetTitle" />
+    <KeyWord name="SetValue" />
+    <KeyWord name="SetVScrollPos" />
+    <KeyWord name="SetWidth" />
+    <KeyWord name="SetWindowRect" />
+    <KeyWord name="setWindowTitle" func="yes" >
+      <Overload retVal="{int}" descr="The method changes the title of a window" >
+        <Param name="hwnd" />
+        <Param name="aString" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Short" />
+    <KeyWord name="Show" />
+    <KeyWord name="ShowFast" />
+    <KeyWord name="ShowItem" />
+    <KeyWord name="ShowItemFast" />
+    <KeyWord name="ShowWindow" />
+    <KeyWord name="ShowWindowFast" />
+    <KeyWord name="Sign" func="yes" >
+      <Overload retVal="{int}" descr="Returns a number that indicates the sign of number" >
+        <Param name="cmdLine" />
+        <Param name="[ cmdShow ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Signal" />
+    <KeyWord name="Signals" />
+    <KeyWord name="SIZE" />
+    <KeyWord name="SmallSpacing" />
+    <KeyWord name="SnapToGrid" />
+    <KeyWord name="SortChildren" />
+    <KeyWord name="Source" />
+    <KeyWord name="SourceLine" func="yes" >
+      <Overload retVal="{mixed}" descr="Returns the line number of the final line in the program if you omit n" >
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Space" func="yes" >
+      <Overload retVal="{string}" descr="Returns the whitespace-delimited words in string with n pad characters between each word" >
+        <Param name="string" />
+        <Param name="[ n ]" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Spacing" />
+    <KeyWord name="StartIt" />
+    <KeyWord name="State" />
+    <KeyWord name="Static" />
+    <KeyWord name="Step" />
+    <KeyWord name="StopIt" />
+    <KeyWord name="Stream" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string describing the state of, or the result of an operation upon, the character stream name" >
+        <Param name="name" />
+        <Param name="[ State ]" />
+        <Param name="[[ Command ], [ streamCommand ]]" />
+        <Param name="[ Description ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="StreamType" />
+    <KeyWord name="StrictArgs" />
+    <KeyWord name="StrictAssign" />
+    <KeyWord name="StrictCase" />
+    <KeyWord name="StrictSignal" />
+    <KeyWord name="StringWidth" />
+    <KeyWord name="Strip" func="yes" >
+      <Overload retVal="{string}" descr="Returns string with leading characters, trailing characters, or both, removed, based on the option you specify" >
+        <Param name="string" />
+        <Param name="[ option ]" />
+        <Param name="[ char ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Style" />
+    <KeyWord name="SubClass" />
+    <KeyWord name="SubclassEdit" />
+    <KeyWord name="SubStr" func="yes" >
+      <Overload retVal="{string}" descr="Returns the substring of string that begins at the nth character and is of length length, padded with pad if necessary" >
+        <Param name="string, n" />
+        <Param name="[ length ]" />
+        <Param name="[ pad ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SubWord" func="yes" >
+      <Overload retVal="{string}" descr="Returns the substring of string that starts at the nth word, and is up to length whitespace-delimited words" >
+        <Param name="string, n" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Super" />
+    <KeyWord name="Symbol" func="yes" >
+      <Overload retVal="{string}" descr="Returns the state of the symbol named by name" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Syntax" />
+    <KeyWord name="Sys" />
+    <KeyWord name="SysAddFileHandle" />
+    <KeyWord name="SysAddRexxMacro" func="yes" >
+      <Overload retVal="{none}" descr="Adds a routine to the Rexx macrospace" >
+        <Param name="name, file" />
+        <Param name="[ order ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysBootDrive" func="yes" >
+      <Overload retVal="{string}" descr="Returns the drive used to boot Windows, for example, &quot;C:&quot;" />
+    </KeyWord>
+    <KeyWord name="SysClearRexxMacroSpace" func="yes" >
+      <Overload retVal="{none}" descr="Clears the Rexx macrospace" />
+    </KeyWord>
+    <KeyWord name="SysCloseEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Closes an event semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysCloseMutexSem" func="yes" >
+      <Overload retVal="{int}" descr="Closes an mutex semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysCls" func="yes" >
+      <Overload retVal="{none}" descr="Clears the screen" />
+    </KeyWord>
+    <KeyWord name="SysCopyObject" />
+    <KeyWord name="SysCreateEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Creates or opens an event semaphore" >
+        <Param name="[ name ]" />
+        <Param name="[ manualReset ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysCreateMutexSem" func="yes" >
+      <Overload retVal="{string}" descr="Creates or opens a mutex semaphore" >
+        <Param name="[ name ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysCreateObject" />
+    <KeyWord name="SysCreatePipe" func="yes" >
+      <Overload retVal="{none}" descr="Creates an unnamed pipe. Linux only!" />
+    </KeyWord>
+    <KeyWord name="SysCurPos" func="yes" >
+      <Overload retVal="{int}" descr="Returns the cursor position in the form row col and optionally moves the cursor to a new location" >
+        <Param name="[ row, column ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysCurState" func="yes" >
+      <Overload retVal="{none}" descr="Hides or displays the cursor" >
+        <Param name="state" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysDriveInfo" func="yes" >
+      <Overload retVal="{string}" descr="Returns drive information in the form: drive: free total label" >
+        <Param name="drive" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysDriveMap" func="yes" >
+      <Overload retVal="{int}" descr="Returns a string listing accessible drives (separated by blanks) in the form: C: D: ...." >
+        <Param name="[ drive ]" />
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysDropFuncs" />
+    <KeyWord name="SysDropRexxMacro" func="yes" >
+      <Overload retVal="{none}" descr="Removes a routine from the Rexx macrospace" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysDumpVariables" func="yes" >
+      <Overload retVal="{int}" descr="Dumps all variables in the current scope" >
+        <Param name="[ name ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileCopy" func="yes" >
+      <Overload retVal="{int}" descr="Copies a file from one location to another" >
+        <Param name="source, target" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileDelete" func="yes" >
+      <Overload retVal="{int}" descr="Deletes a file" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileExist" func="yes" >
+      <Overload retVal="{int}" descr="Checks for the existence of a file" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileMove" func="yes" >
+      <Overload retVal="{int}" descr="Moves a file from one location to another" >
+        <Param name="source, target" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileSearch" func="yes" >
+      <Overload retVal="{int}" descr="Finds all file lines containing the target string and returns the file lines in a Rexx stem variable collection" >
+        <Param name="target, fileName, stem" />
+        <Param name="[ options ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileSystemType" func="yes" >
+      <Overload retVal="{int}" descr="Returns the name of the file system used for a drive" >
+        <Param name="drive" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFileTree" func="yes" >
+      <Overload retVal="{int}" descr="Finds all files that match a file specification" >
+        <Param name="fileSpec, stem" />
+        <Param name="[ options ]" />
+        <Param name="[ targetAttrib ]" />
+        <Param name="[ newAttrib ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysFork" func="yes" >
+      <Overload retVal="{int}" descr="Returns the process id to the parent process. Linux only!" />
+    </KeyWord>
+    <KeyWord name="SysFromUnicode" func="yes" >
+      <Overload retVal="{int}" descr="Maps a UNICODE character string to an ASCII character string" >
+        <Param name="string, codePage, mappingFlags, defaultChar, outStem" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysGetCollate" />
+    <KeyWord name="SysGetErrortext" func="yes" >
+      <Overload retVal="{string}" descr="Obtains a string describing the system error identified by the error number" >
+        <Param name="errorNumber" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysGetFileDateTime" func="yes" >
+      <Overload retVal="{string}" descr="Returns the selected data and time attribute of the file filename" >
+        <Param name="fileName" />
+        <Param name="[ timeSel ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysGetKey" func="yes" >
+      <Overload retVal="{string}" descr="Reads and returns the next key from the keyboard buffer" >
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysGetMessage" func="yes" >
+      <Overload retVal="{string}" descr="Retrieves a message from a catalog file and replaces the placeholder %s with the text you specify. Linux only!" >
+        <Param name="number" />
+        <Param name="[ fileName ]" />
+        <Param name="[ string1 ]" />
+        <Param name="[ ... ]" />
+        <Param name="[ string9 ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysGetMessageX" func="yes" >
+      <Overload retVal="{string}" descr="Retrieves a message from a catalog file and replaces the placeholder %s with the text you specify. Linux only!" >
+        <Param name="msgText, number" />
+        <Param name="[ fileName ]" />
+        <Param name="[ string1 ]" />
+        <Param name="[ ... ]" />
+        <Param name="[ string9 ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIni" func="yes" >
+      <Overload retVal="{string}" descr="Allows limited access to INI file variables" >
+        <Param name="[ iniFile ]" />
+        <Param name="app, key, val, stem" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFile" func="yes" >
+      <Overload retVal="{int}" descr="Checks for the existence of a file" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileCompressed" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is compressed" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileDirectory" func="yes" >
+      <Overload retVal="{int}" descr="Checks for the existence of a subdirectory" >
+        <Param name="dirName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileEncrypted" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is encrypted" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileLink" func="yes" >
+      <Overload retVal="{int}" descr="Checks for the existence of a link" >
+        <Param name="linkName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileNotContentIndexed" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is flagged to be indexed by the Index Service" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileOffline" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is flagged as Offline" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileSparse" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is flagged as Sparse" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysIsFileTemporary" func="yes" >
+      <Overload retVal="{int}" descr="Checks if a file is flagged as Temporary" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysLinVer" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string identifying the Linux system version" />
+    </KeyWord>
+    <KeyWord name="SysLoadFuncs" />
+    <KeyWord name="SysLoadRexxMacroSpace" func="yes" >
+      <Overload retVal="{none}" descr="Loads functions from a saved macrospace file" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysMkDir" func="yes" >
+      <Overload retVal="{int}" descr="Creates a specified directory" >
+        <Param name="dirSpec" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysOpenEventSem" func="yes" >
+      <Overload retVal="{none}" descr="Opens an event semaphore" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysOpenMutexSem" func="yes" >
+      <Overload retVal="{none}" descr="Opens a mutex semaphore" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysPostEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Posts an event semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysProcessType" />
+    <KeyWord name="SysPulseEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Posts and immediately resets an event semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysQueryProcess" func="yes" >
+      <Overload retVal="{string}" descr="Retrieves information about the current process or Windows thread" >
+        <Param name="&quot;PID&quot; | &quot;TID&quot; | &quot;PPRIO&quot; | &quot;TPRIO&quot; | &quot;PTIME&quot; | &quot;TTIME&quot;" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysQueryProcessCodePage" />
+    <KeyWord name="SysQueryRexxMacro" func="yes" >
+      <Overload retVal="{int}" descr="Queries the existence of a macrospace function" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysReleaseMutexSem" func="yes" >
+      <Overload retVal="{int}" descr="Releases a mutex semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysReorderRexxMacro" func="yes" >
+      <Overload retVal="{none}" descr="Reorders a routine loaded in the Rexx macrospace" >
+        <Param name="name, order" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysRequestMutexSem" func="yes" >
+      <Overload retVal="{int}" descr="Requests a mutex semaphore" >
+        <Param name="handle" />
+        <Param name="[ timeout ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysResetEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Resets an event semaphore" >
+        <Param name="handle" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysRmDir" func="yes" >
+      <Overload retVal="{int}" descr="Deletes a specified file directory without your confirmation" >
+        <Param name="dirSpec" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSaveRexxMacroSpace" func="yes" >
+      <Overload retVal="{int}" descr="Saves the Rexx macrospace" >
+        <Param name="file" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSearchPath" func="yes" >
+      <Overload retVal="{string}" descr="Searches the specified file path for the specified file" >
+        <Param name="path, fileName" />
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSetFileDateTime" func="yes" >
+      <Overload retVal="{int}" descr="Modifies the &quot;Last Modified&quot; date and time of file filename" >
+        <Param name="fileName" />
+        <Param name="[ newDate ]" />
+        <Param name="[ newTime ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSetPriority" func="yes" >
+      <Overload retVal="{int}" descr="Changes the priority of the current process" >
+        <Param name="class, delta" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSetProcessCodePage" />
+    <KeyWord name="SysShutdownSystem" func="yes" >
+      <Overload retVal="{int}" descr="Provides an interface to the InitiateSystemShutdown() API on Windows" >
+        <Param name="[ computer ]" />
+        <Param name="[ message ]" />
+        <Param name="[ timeout ]" />
+        <Param name="[ force ]" />
+        <Param name="[ reboot ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSleep" func="yes" >
+      <Overload retVal="{int}" descr="Pauses a Rexx program for a specified time interval" >
+        <Param name="seconds" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysStemCopy" func="yes" >
+      <Overload retVal="{int}" descr="Copies items from the source stem to the target stem" >
+        <Param name="fromStem, toStem" />
+        <Param name="[ from ]" />
+        <Param name="[ to ]" />
+        <Param name="[ count ]" />
+        <Param name="[ I | O ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysStemDelete" func="yes" >
+      <Overload retVal="{int}" descr="Deletes the specified item at the index startitem in the stem" >
+        <Param name="stem, startItem" />
+        <Param name="[ itemCount ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysStemInsert" func="yes" >
+      <Overload retVal="{int}" descr="Inserts a new item at position in the stem" >
+        <Param name="stem, position, value" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysStemSort" func="yes" >
+      <Overload retVal="{int}" descr="Sorts all or the specified items in the stem" >
+        <Param name="stem" />
+        <Param name="[ A | D ]" />
+        <Param name="[ C | I ]" />
+        <Param name="[ 1 | start ]" />
+        <Param name="[ end ]" />
+        <Param name="[ 1 | firstCol ]" />
+        <Param name="[ lastCol ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSwitchSession" func="yes" >
+      <Overload retVal="{int}" descr="Brings the named window to the foreground" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysSystemDirectory" func="yes" >
+      <Overload retVal="{string}" descr="Returns the Windows system directory" />
+    </KeyWord>
+    <KeyWord name="SysTempFileName" func="yes" >
+      <Overload retVal="{string}" descr="Returns a unique name for a file or directory that does not currently exist" >
+        <Param name="template" />
+        <Param name="[ filter ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysTextScreenRead" func="yes" >
+      <Overload retVal="{string}" descr="Reads characters from a specified screen location" >
+        <Param name="row, column" />
+        <Param name="[ len ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysTextScreenSize" func="yes" >
+      <Overload retVal="{string}" descr="Returns the size of the screen in the format: row col" />
+    </KeyWord>
+    <KeyWord name="SysToUnicode" func="yes" >
+      <Overload retVal="{string}" descr="Maps a character string to a UNICODE string" >
+        <Param name="string, codePage, translateFlag, outStem" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysUtilVersion" func="yes" >
+      <Overload retVal="{string}" descr="Returns a version number that identifies the current level of the Rexx Utilities package" />
+    </KeyWord>
+    <KeyWord name="SysVersion" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string to identify the operating system and version" />
+    </KeyWord>
+    <KeyWord name="SysVolumeLable" func="yes" >
+      <Overload retVal="{string}" descr="Returns the volume label for the specified drive" >
+        <Param name="[ driveLetter ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWait" func="yes" >
+      <Overload retVal="{string}" descr="Waits for all child processes to end. Linux only!" />
+    </KeyWord>
+    <KeyWord name="SysWaitEventSem" func="yes" >
+      <Overload retVal="{int}" descr="Waits on an event semaphore" >
+        <Param name="handle" />
+        <Param name="[ timeout ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWaitNamedPipe" func="yes" >
+      <Overload retVal="{int}" descr="Performs a timed wait on a named pipe and returns the WaitNamedPipe return code" >
+        <Param name="name" />
+        <Param name="[ timeout ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWildCard" />
+    <KeyWord name="SysWinDecryptFile" func="yes" >
+      <Overload retVal="{int}" descr="Decrypts a given file (Windows 2000 only)" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWinEncryptFile" func="yes" >
+      <Overload retVal="{int}" descr="Encrypts a given file (Windows 2000 only)" >
+        <Param name="fileName" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWinGetDefaultPrinter" func="yes" >
+      <Overload retVal="{string}" descr="Returns the current default printer in the form &quot;Printername,Drivername,Portname&quot;" />
+    </KeyWord>
+    <KeyWord name="SysWinGetPrinters" func="yes" >
+      <Overload retVal="{int}" descr="Fills a stem with the available printer descriptions" >
+        <Param name="stem." />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWinSetDefaultPrinter" func="yes" >
+      <Overload retVal="{int}" descr="Sets the default printer" >
+        <Param name="description" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="SysWinVer" func="yes" >
+      <Overload retVal="{string}" descr="Returns a string specifying the Windows operating system version information in the form x.xx." />
+    </KeyWord>
+    <KeyWord name="TextBkColor" />
+    <KeyWord name="TextColor" />
+    <KeyWord name="Then" />
+    <KeyWord name="TiledBackgroundBitmap" />
+    <KeyWord name="Time" func="yes" >
+      <Overload retVal="{string}" descr="Returns the local time in the 24-hour clock format hh:mm:ss (hours, minutes, and seconds) by default" >
+        <Param name="[ option ]" />
+        <Param name="[ string ]" />
+        <Param name="[ option2 ]" />
+        <Param name="[ offset ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="TimeStamp" />
+    <KeyWord name="Title" />
+    <KeyWord name="To" />
+    <KeyWord name="Toggle" />
+    <KeyWord name="ToTheTop" />
+    <KeyWord name="Trace" func="yes" >
+      <Overload retVal="{string}" descr="Returns trace actions currently in effect and, optionally, alters the setting" >
+        <Param name="[ option ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Translate" func="yes" >
+      <Overload retVal="{string}" descr="Returns string with each character translated to another character or unchanged" >
+        <Param name="string" />
+        <Param name="[ table-out ]" />
+        <Param name="[ table-in ]" />
+        <Param name="[ pad ]" />
+        <Param name="[ pos ]" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="TransparentText" />
+    <KeyWord name="Trunc" func="yes" >
+      <Overload retVal="{int}" descr="Returns the integer part of number and n decimal places" >
+        <Param name="number" />
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Uncheck" />
+    <KeyWord name="Unchecked" />
+    <KeyWord name="Unfocused" />
+    <KeyWord name="Unselcted" />
+    <KeyWord name="Until" />
+    <KeyWord name="Update" />
+    <KeyWord name="UpdateItem" />
+    <KeyWord name="Upper" func="yes" >
+      <Overload retVal="{string}" descr="Returns a new string with the characters of string beginning with character n for length characters converted to uppercase" >
+        <Param name="string" />
+        <Param name="[ n ]" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Use" />
+    <KeyWord name="User" />
+    <KeyWord name="UserID" func="yes" >
+      <Overload retVal="{mixed}" descr="The return value is the active user identification" />
+    </KeyWord>
+    <KeyWord name="Uses" />
+    <KeyWord name="UTF9" />
+    <KeyWord name="Validate" />
+    <KeyWord name="Value" func="yes" >
+      <Overload retVal="{string}" descr="Returns the value of the name" >
+        <Param name="name" />
+        <Param name="[ newValue ]" />
+        <Param name="[ selector ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Var" func="yes" >
+      <Overload retVal="{int}" descr="Returns 1 if name is the name of a variable, that is, a symbol that has been assigned a value), or 0" >
+        <Param name="name" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Variable" />
+    <KeyWord name="Verbose" />
+    <KeyWord name="VerboseX" />
+    <KeyWord name="Verify" func="yes" >
+      <Overload retVal="{int}" descr="Returns a number that, by default, indicates whether string is composed only of characters from reference" >
+        <Param name="string, reference" />
+        <Param name="[ option ]" />
+        <Param name="[ start ]" />
+        <Param name="[ length ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Version" />
+    <KeyWord name="VisibleItems" />
+    <KeyWord name="Volatile" />
+    <KeyWord name="VScrollPos" />
+    <KeyWord name="When" />
+    <KeyWord name="While" />
+    <KeyWord name="Width" />
+    <KeyWord name="With" />
+    <KeyWord name="Word" func="yes" >
+      <Overload retVal="{string}" descr="Returns the nth whitespace-delimited word in string" >
+        <Param name="string, n" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="WordIndex" func="yes" >
+      <Overload retVal="{int}" descr="Returns the position of the first character in the nth whitespace-delimited word in string" >
+        <Param name="string, n" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="WordLength" func="yes" >
+      <Overload retVal="{int}" descr="Returns the length of the nth whitespace-delimited word in the string" >
+        <Param name="string, n" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="WordPos" func="yes" >
+      <Overload retVal="{int}" descr="Returns the length of the nth whitespace-delimited word in the string" >
+        <Param name="phrase, string" />
+        <Param name="[ start ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Words" func="yes" >
+      <Overload retVal="{int}" descr="Returns the number of whitespace-delimited words in string" >
+        <Param name="string" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Write" />
+    <KeyWord name="WriteDirect" />
+    <KeyWord name="WriteToButton" />
+    <KeyWord name="WriteToWindow" />
+    <KeyWord name="X2B" func="yes" >
+      <Overload retVal="{int}" descr="Hexadecimal to Binary" >
+        <Param name="hexString" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="X2C" func="yes" >
+      <Overload retVal="{int}" descr="Hexadecimal to Character" >
+        <Param name="hexString" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="X2D" func="yes" >
+      <Overload retVal="{int}" descr="Hexadecimal to Decimal" >
+        <Param name="hexString" />
+        <Param name="[ n ]" />
+      </Overload>
+    </KeyWord>
+    <KeyWord name="Xrange" func="yes" >
+      <Overload retVal="{int}" descr="Hexadecimal Range" >
+        <Param name="[ start ]" />
+        <Param name="[ end ]" />
+      </Overload>
+    </KeyWord>
+  </AutoComplete>
+</NotepadPlus>
