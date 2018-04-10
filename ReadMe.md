@@ -1,4 +1,4 @@
-# Open Object Rexx / NetRexx Erweiterung für Notepad++
+# Open Object Rexx / NetRexx Extension for Notepad++
 
 Syntax Highlighting for Open Object Rexx including Classic Rexx and Open Dialog Rexx up to version 4.2 (beta r6800)
 
