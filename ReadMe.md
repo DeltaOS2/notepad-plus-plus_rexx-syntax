@@ -36,7 +36,7 @@ Load a RexxScript into your editor. The sysntax-higlighting is connected to the 
 You should see something like that:
 ![](screenshots/syntax-highlighting.png?raw=true)
 
-If the syntax is not highlighted open the **Languages** menu in Notepad++ and select **Rexx**:
+If the syntax is not highlighted open the **Languages** menu in Notepad++ and select **Rexx**:  
 ![](screenshots/menu.png?raw=true)
 
 ## Built With
